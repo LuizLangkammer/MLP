@@ -1,5 +1,6 @@
 package main;
 
+import fileReader.CarEvaluationReader;
 import fileReader.MyInputReader;
 
 import java.io.FileNotFoundException;
@@ -13,13 +14,13 @@ public class MLPRunner {
 
         //Parameters
         String basePath = "xor-base.txt";
-        double ni = 0.3;
+        double ni = 0.1;
         int ages = 10000;
-        int intermediary = 2;
+        int intermediary = 10;
 
         ArrayList<Sample> base = null;
         try{
-            base = new MyInputReader().getBase(basePath);
+            base = new CarEvaluationReader().getBase();
         }catch(FileNotFoundException e) {
             System.out.println("Arquivo nao encontrado");
         }catch(IOException e) {
