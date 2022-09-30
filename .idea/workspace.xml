@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dc7045e-ead4-4017-9bd7-518d003ee4ab" name="Changes" comment="Staring MLP, MLPRunner, FileReader">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileReader/CarEvaluationReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileReader/CarEvaluationReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/MLPRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MLPRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,14 +33,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/luiz/programing/Meus_Projetos/Java/MLP/src/main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/luiz/programing/Meus_Projetos/Java/MLP&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main" />
@@ -87,7 +89,19 @@
       <workItem from="1662138156046" duration="1697000" />
       <workItem from="1662489084876" duration="1651000" />
       <workItem from="1662653323264" duration="51000" />
-      <workItem from="1662653724420" duration="4361000" />
+      <workItem from="1662653724420" duration="4448000" />
+      <workItem from="1662667707651" duration="783000" />
+      <workItem from="1662742546028" duration="181000" />
+      <workItem from="1663272440619" duration="4923000" />
+      <workItem from="1663344575944" duration="625000" />
+      <workItem from="1663596914753" duration="3736000" />
+      <workItem from="1663609817975" duration="9000" />
+      <workItem from="1663880074384" duration="121000" />
+      <workItem from="1663886049694" duration="68000" />
+      <workItem from="1663955439988" duration="1180000" />
+      <workItem from="1664222868814" duration="13000" />
+      <workItem from="1664481542609" duration="3054000" />
+      <workItem from="1664554591528" duration="1015000" />
     </task>
     <task id="LOCAL-00001" summary="Staring MLP, MLPRunner, FileReader">
       <created>1661465913092</created>
@@ -103,7 +117,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662489207193</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Staring MLP, MLPRunner, FileReader">
+      <created>1662658546241</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1662658546241</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Staring MLP, MLPRunner, FileReader">
+      <created>1662658563354</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662658563354</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

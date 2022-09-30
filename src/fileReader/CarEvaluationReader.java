@@ -6,9 +6,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class CarEvaluationReader {
 	
@@ -65,6 +63,55 @@ public class CarEvaluationReader {
 		outputMap.put("acc", "0 1 0 0");
 		outputMap.put("good", "0 0 1 0");
 		outputMap.put("vgood", "0 0 0 1");
+
+
+
+	}
+
+	public ArrayList<Sample>[] getDevidedBase() throws IOException {
+
+		ArrayList<Sample> base = getBase();
+
+		ArrayList<Sample>[] types = new ArrayList[4];
+		types[0] = new ArrayList<Sample>();
+		types[1] = new ArrayList<Sample>();
+		types[2] = new ArrayList<Sample>();
+		types[3] = new ArrayList<Sample>();
+
+		for(int i=0; i<base.size(); i++){
+			Sample sample = base.get(i);
+
+			double[] output = sample.getOutput();
+
+			for(int j=0; j<4; j++){
+				if(output[j]==1){
+					types[j].add(sample);
+					break;
+				}
+			}
+		}
+
+		ArrayList<Sample> train = new ArrayList<Sample>();
+		ArrayList<Sample> test = new ArrayList<Sample>();
+		for(int i=0; i<types.length; i++){
+			for(int j=0; j<types[i].size(); j++){
+				if(j<types[i].size()*0.75){
+					train.add(types[i].get(j));
+				}else{
+					test.add(types[i].get(j));
+				}
+			}
+		}
+
+		Collections.shuffle(train);
+		Collections.shuffle(test);
+
+		ArrayList<Sample> [] dividedBase = new ArrayList[]{train, test};
+
+
+
+		return dividedBase;
+
 	}
 
 	public ArrayList<Sample> getBase() throws FileNotFoundException, IOException {
