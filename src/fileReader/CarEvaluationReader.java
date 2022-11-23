@@ -68,7 +68,7 @@ public class CarEvaluationReader {
 
 	}
 
-	public ArrayList<Sample>[] getDevidedBase() throws IOException {
+	public ArrayList<Sample>[] getDevidedBase(boolean balance, boolean disableRandomness) throws IOException {
 
 		ArrayList<Sample> base = getBase();
 
@@ -91,6 +91,24 @@ public class CarEvaluationReader {
 			}
 		}
 
+		if(balance){
+			double max = types[0].size();
+			for(int i=1; i<types.length; i++){
+				if(types[i].size() > max){
+					max = types[i].size();
+				}
+			}
+			for(int i=0; i<types.length; i++){
+				for(int j=0; j<types[i].size(); j++){
+					if(types[i].size() >= max){
+						break;
+					}else{
+						types[i].add(types[i].get(j));
+					}
+				}
+			}
+		}
+
 		ArrayList<Sample> train = new ArrayList<Sample>();
 		ArrayList<Sample> test = new ArrayList<Sample>();
 		for(int i=0; i<types.length; i++){
@@ -103,8 +121,8 @@ public class CarEvaluationReader {
 			}
 		}
 
-		Collections.shuffle(train);
-		Collections.shuffle(test);
+		//Collections.shuffle(train);
+		//Collections.shuffle(test);
 
 		ArrayList<Sample> [] dividedBase = new ArrayList[]{train, test};
 

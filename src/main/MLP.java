@@ -10,7 +10,7 @@ public class MLP {
     private double[][] wh;
     private double[][] wo;
 
-    public MLP(double ni, int numInput, int numOutput, int numIntermediary){
+    public MLP(double ni, int numInput, int numOutput, int numIntermediary, boolean disableRandomness){
 
         this.ni = ni;
         this.numInput = numInput;
@@ -24,17 +24,17 @@ public class MLP {
 
         for(int i=0;i<numInput+1;i++) {
             for(int j=0;j<numIntermediary;j++) {
-                wh[i][j] =(random.nextDouble(0.6)-0.3);
+                wh[i][j] = -0.3 + 0.05 * j;
             }
         }
         for(int i=0;i<numIntermediary+1;i++) {
             for(int j=0;j<numOutput;j++) {
-                wo[i][j] = (random.nextDouble(0.6)-0.3);
+                wo[i][j] = -0.3 + 0.05 * j;
             }
         }
     }
 
-    public double[] learn(double[] input, double[] desiredOutput){
+    public double[] learn(double[] input, double[] desiredOutput, boolean quadratic){
 
         double[] entries = new double[input.length + 1];
         for(int i=0;i<input.length;i++) {
@@ -47,7 +47,15 @@ public class MLP {
 
         double [] deltaO = new double[numOutput];
         for(int i=0; i<numOutput; i++){
-            deltaO[i] = o[i] * (1-o[i]) * (desiredOutput[i] - o[i]);
+            if(quadratic){
+               int sign = 1;
+               if(desiredOutput[i] - o[i] < 0){
+                   sign = -1;
+               }
+               deltaO[i] = o[i] * (1-o[i]) * Math.pow(desiredOutput[i] - o[i], 2) * sign;
+            }else{
+                deltaO[i] = o[i] * (1-o[i]) * (desiredOutput[i] - o[i]);
+            }
         }
 
         double[] deltaH = new double[numIntermediary];
